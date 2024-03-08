@@ -1,0 +1,15 @@
+--cpu=Cortex-M4.fp
+".\obj\startup_m480.o"
+".\obj\system_m480.o"
+".\obj\main.o"
+".\obj\sprom.o"
+".\obj\retarget.o"
+".\obj\clk.o"
+".\obj\crypto.o"
+".\obj\fmc.o"
+".\obj\sys.o"
+".\obj\uart.o"
+--strict --scatter ".\CRYPTO_AES_In_SPROM.sct"
+--map --datacompressor=off --info=inline --entry Reset_Handler --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\lst\CRYPTO_AES_In_SPROM.map" -o .\obj\CRYPTO_AES_In_SPROM.axf
